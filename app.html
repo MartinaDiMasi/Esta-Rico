@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Está Rico! - Expendedoras Automáticas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#inicio" class="logo">
+                <div class="logo-icon"></div>
+                Está Rico!
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sectores">Sectores</a></li>
+                <li><a href="#maquinas">Máquinas</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <h1>¡<span class="highlight">Está Rico</span>!</h1>
+            <p>Expendedoras automáticas de última generación para empresas modernas. Calidad, tecnología y servicio excepcional.</p>
+            <a href="#contacto" class="cta-button">Solicitar información</a>
+        </div>
+    </section>
+
+    <!-- Sectores -->
+    <section class="section" id="sectores">
+        <div class="section-container">
+            <h2 class="section-title">Nuestros Sectores</h2>
+            <p class="section-subtitle">Brindamos soluciones personalizadas para diferentes industrias y necesidades empresariales.</p>
+            
+            <div class="sectores-grid">
+                <div class="sector-card fade-in">
+                    <h3>Sectores Públicos</h3>
+                    <ul>
+                        <li>Hospitales</li>
+                        <li>Aeropuertos</li>
+                        <li>Oficinas gubernamentales</li>
+                    </ul>
+                </div>
+                
+                <div class="sector-card fade-in">
+                    <h3>Sector Privado</h3>
+                    <ul>
+                        <li>Empresas</li>
+                        <li>Hoteles</li>
+                        <li>Sistemas ERP</li>
+                    </ul>
+                </div>
+                
+                <div class="sector-card fade-in">
+                    <h3>Educación</h3>
+                    <ul>
+                        <li>Universidades</li>
+                        <li>Establecimientos educativos</li>
+                        <li>Centros de formación</li>
+                    </ul>
+                </div>
+
+            <div class="sector-card fade-in">
+                <h3>Servicios Especiales</h3>
+                <ul>
+                    <li>Estaciones de servicio</li>
+                    <li>Productos gourmet y regalos</li>
+                    <li>Experiencias premium</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Máquinas -->
+ <!-- Máquinas -->
+<section class="section section-gray" id="maquinas">
+    <div class="section-container">
+        <h2 class="section-title">Nuestras Máquinas</h2>
+        <p class="section-subtitle">Tecnología avanzada con la mejor selección de productos para satisfacer todos los gustos.</p>
+        
+        <div class="maquinas-gallery">
+            <div class="maquina-card fade-in">
+                <div class="carousel-container">
+                    <div class="maquina-image-large">
+                        <img class="carousel-img active" src="/img/maquinas/cafe2.jpg" alt="Máquina de Bebidas Calientes1">
+                        <img class="carousel-img"src="/img/maquinas/maquinacafe3.jpg" alt="Máquina de Bebidas Calientes2">
+                        <img class="carousel-img" src="/img/maquinas/cafe1.jpg" alt="Máquina de Bebidas Calientes3">
+                        <img class="carousel-img" src="/img/maquinas/maquinacafe2.jpg" alt="Máquina de Bebidas Calientes4">
+
+
+                        
+
+                        <div class="maquina-overlay"></div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="changeSlide(this, -1)">❮</button>
+                    <button class="carousel-btn next" onclick="changeSlide(this, 1)">❯</button>
+                    <div class="carousel-dots"></div>
+                </div>
+                <div class="maquina-content">
+                    <h3>Bebidas Calientes</h3>
+                    <p>Café premium, té selecto y chocolate caliente de las mejores marcas.</p>
+                </div>
+            </div>
+            
+            <div class="maquina-card fade-in">
+                <div class="carousel-container">
+                    <div class="maquina-image-large">
+                        <img class="carousel-img active" src="/img/maquinas/bebidaafria.jpg" alt="Máquina de Bebidas Frías">
+                        <img class="carousel-img" src="/img/maquinas/bebidafria2.jpg" alt="Máquina de Bebidas Frías 2">
+                        <img class="carousel-img" src="/img/maquinas/coca.jpg" alt="Máquina de Bebidas Frías 3">
+                        <img class="carousel-img" src="/img/maquinas/cocacola.jpg" alt="Máquina de Bebidas Frías 3">
+
+
+                        <div class="maquina-overlay"></div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="changeSlide(this, -1)">❮</button>
+                    <button class="carousel-btn next" onclick="changeSlide(this, 1)">❯</button>
+                    <div class="carousel-dots"></div>
+                </div>
+                <div class="maquina-content">
+                    <h3>Bebidas Frías</h3>
+                    <p>Refrescos, jugos naturales, aguas saborizadas y bebidas energéticas.</p>
+                </div>
+            </div>
+            
+            <div class="maquina-card fade-in">
+                <div class="carousel-container">
+                    <div class="maquina-image-large">
+                        <img class="carousel-img active" src="/img/maquinas/snacks.jpg" alt="Máquina de Snacks">
+                        <img class="carousel-img" src="/img/maquinas/comida.jpg" alt="Máquina de Snacks 2">
+                        <img class="carousel-img" src="/img/maquinas/comida2.jpg" alt="Máquina de Snacks 3">
+                        <img class="carousel-img" src="/img/maquinas/comida4.jpg" alt="Máquina de Snacks 4">
+
+
+                        <div class="maquina-overlay"></div>
+                    </div>
+                    <button class="carousel-btn prev" onclick="changeSlide(this, -1)">❮</button>
+                    <button class="carousel-btn next" onclick="changeSlide(this, 1)">❯</button>
+                    <div class="carousel-dots"></div>
+                </div>
+                <div class="maquina-content">
+                    <h3>Snacks y Refrigerios</h3>
+                    <p>Variedad de productos dulces, salados y opciones saludables.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Sistemas de Pago -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Sistemas de Pago</h2>
+            <p class="section-subtitle">Múltiples opciones de pago para mayor comodidad y flexibilidad.</p>
+            
+            <div class="payment-grid">
+                <div class="payment-item fade-in">
+                    <h4>💵 Billetes</h4>
+                    <p>Aceptación de billetes con validación automática</p>
+                </div>
+                
+                <div class="payment-item fade-in">
+                    <h4>📱 Código QR</h4>
+                    <p>Pago digital rápido y seguro desde el móvil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnología -->
+    <section class="section section-gray" id="tecnologia">
+        <div class="section-container">
+            <h2 class="section-title">Tecnología e Innovación</h2>
+            <p class="section-subtitle">Sistemas avanzados de seguridad y control para una experiencia superior.</p>
+            
+            <div class="tech-features">
+                <div class="tech-feature fade-in">
+                    <div class="tech-icon">🔑</div>
+                    <h3>PIN y Clave</h3>
+                    <p>Sistema de autenticación seguro para control de acceso empresarial</p>
+                </div>
+                
+                <div class="tech-feature fade-in">
+                    <div class="tech-icon">👤</div>
+                    <h3>Reconocimiento Facial</h3>
+                    <p>Tecnología biométrica para identificación personalizada</p>
+                </div>
+                
+                <div class="tech-feature fade-in">
+                    <div class="tech-icon">🔧</div>
+                    <h3>Llaveros</h3>
+                    <p>Acceso rápido mediante dispositivos RFID personalizados</p>
+                </div>
+                
+                <div class="tech-feature fade-in">
+                    <div class="tech-icon">📱</div>
+                    <h3>Aplicaciones Móviles</h3>
+                    <p>Control y gestión completa desde dispositivos móviles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marcas -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Nuestras Marcas</h2>
+            <p class="section-subtitle">Trabajamos con las mejores marcas del mercado para garantizar calidad superior.</p>
+            
+            <div class="brands-grid">
+                <div class="brand-item fade-in">
+                    <img src="/img/brand/arcor.png" alt="Arcor" class="brand-logo">
+                    <h3>Arcor</h3>
+                </div>
+                <div class="brand-item fade-in">
+                    <img src="/img/brand/cocacola.png" alt="CocaCola" class="brand-logo">
+                    <h3>Coca Cola</h3>
+                </div>
+                <div class="brand-item fade-in">
+                    <img src="/img/brand/mondelez.svg" alt="mondelez" class="brand-logo">
+                    <h3>Mondelez</h3>
+                </div>
+                <div class="brand-item fade-in">
+                    <img src="/img/brand/LaSerenisima.png" alt="LaSerenisima" class="brand-logo">
+                    <h3>La Serenísima</h3>
+                </div>
+                <div class="brand-item fade-in">
+                    <img src="/img/brand/milkaut.jpg" alt="Milkaut" class="brand-logo">
+                    <h3>Milkaut</h3>
+                </div>
+                <div class="brand-item fade-in">
+                    <img src="/img/brand/lavirginia.jpg" alt="LaVirginia" class="brand-logo">
+                    <h3>La Virginia</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excelencia -->
+    <section class="section section-gray">
+        <div class="section-container">
+            <h2 class="section-title">Nuestra Excelencia</h2>
+            <p class="section-subtitle">Nos distinguimos por nuestro compromiso con la calidad y el servicio excepcional.</p>
+            
+            <div class="excellence-points">
+                <div class="excellence-point fade-in">
+                    <h3>Pronta Atención</h3>
+                    <p>Respuesta rápida y atención personalizada para nuestros clientes</p>
+                </div>
+                
+                <div class="excellence-point fade-in">
+                    <h3>Servicio Técnico Especializado</h3>
+                    <p>Mantenimiento profesional y soporte técnico especializado</p>
+                </div>
+                
+                <div class="excellence-point fade-in">
+                    <h3>Confianza Empresarial</h3>
+                    <p>Empresas y comunidades de Uruguay que confían en nosotros</p>
+                </div>
+                
+                <div class="excellence-point fade-in">
+                    <h3>Compromiso con la Calidad</h3>
+                    <p>Productos premium y soluciones deportivas de vanguardia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Está Rico SRL</h3>
+                <p>Expendedoras automáticas de última generación</p>
+                <p>Transformando cada pausa en un momento especial</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📧 info@estarico.com</p>
+                <p>📞 +598 XXXX-XXXX</p>
+                <p>📍 Córdoba, Argentina</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <p>Instalación y mantenimiento</p>
+                <p>Servicio técnico especializado</p>
+                <p>Productos premium</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <p>Redes sociales</p>
+                <p>Newsletter</p>
+                <p>App móvil</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Está Rico SRL. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
