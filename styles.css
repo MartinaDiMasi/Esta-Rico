@@ -86,7 +86,7 @@ body {
 /* Hero Section */
 .hero {
     padding: 230px 0;
-    background: url('/img/banner.jpg') center/cover;
+    background: url('img/banner.jpg') center/cover;
     display: flex;
     align-items: center;
 }
