@@ -12,6 +12,7 @@ body {
     color: #333;
     background: #ffffff;
     font-weight: 400;
+    
 }
 
 
@@ -69,7 +70,7 @@ body {
     width: auto;
     object-fit: contain;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin-left: -10rem;
+    margin-left: -4rem;
     filter: brightness(1);
 }
 .logo:hover .logo-image {
@@ -165,7 +166,7 @@ body {
 /*section HERO*/
 
 .hero {
-    padding: 120px 0 180px 0;
+    padding: 110px 0 105px 0;
     background: url('img/banner2.jpg') center/cover;
     display: flex;
     align-items: center;
