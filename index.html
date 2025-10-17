@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Está Rico! - Expendedoras Automáticas</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <a href="#inicio" class="logo">
-                <div class="logo-icon"></div>
-                Está Rico!
-            </a>
+        <a href="#inicio" class="logo">
+            <img src="img/logo.png" alt="Está Rico!" class="logo-image">
+        </a>
             <ul class="nav-menu">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#sectores">Sectores</a></li>
@@ -27,7 +27,7 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-container">
-            <h1>¡<span class="highlight">Está Rico</span>!</h1>
+            <img src="img/logo.png" alt="Está Rico!" class="hero-logo">
             <p>Expendedoras automáticas de última generación para empresas modernas. Calidad, tecnología y servicio excepcional.</p>
             <a href="#contacto" class="cta-button">Solicitar información</a>
         </div>
@@ -39,8 +39,12 @@
             <h2 class="section-title">Nuestros Sectores</h2>
             <p class="section-subtitle">Brindamos soluciones personalizadas para diferentes industrias y necesidades empresariales.</p>
             
+
             <div class="sectores-grid">
                 <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/icon-aero.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>Sectores Públicos</h3>
                     <ul>
                         <li>Hospitales</li>
@@ -50,6 +54,9 @@
                 </div>
                 
                 <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/icon-hotel.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>Sector Privado</h3>
                     <ul>
                         <li>Empresas</li>
@@ -59,6 +66,9 @@
                 </div>
                 
                 <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/icon-escuela.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>Educación</h3>
                     <ul>
                         <li>Universidades</li>
@@ -67,15 +77,18 @@
                     </ul>
                 </div>
 
-            <div class="sector-card fade-in">
-                <h3>Servicios Especiales</h3>
-                <ul>
-                    <li>Estaciones de servicio</li>
-                    <li>Productos gourmet y regalos</li>
-                    <li>Experiencias premium</li>
-                </ul>
+                <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/icon-estacion.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
+                    <h3>Servicios Especiales</h3>
+                    <ul>
+                        <li>Estaciones de servicio</li>
+                        <li>Productos gourmet y regalos</li>
+                        <li>Experiencias premium</li>
+                    </ul>
+                </div>
             </div>
-        </div>
     </section>
 
  <!-- Máquinas -->
@@ -92,15 +105,8 @@
                         <img class="carousel-img"src="img/maquinas/maquinacafe3.jpg" alt="Máquina de Bebidas Calientes2">
                         <img class="carousel-img" src="img/maquinas/cafe1.jpg" alt="Máquina de Bebidas Calientes3">
                         <img class="carousel-img" src="img/maquinas/maquinacafe2.jpg" alt="Máquina de Bebidas Calientes4">
-
-
-                        
-
                         <div class="maquina-overlay"></div>
                     </div>
-                    <button class="carousel-btn prev" onclick="changeSlide(this, -1)">❮</button>
-                    <button class="carousel-btn next" onclick="changeSlide(this, 1)">❯</button>
-                    <div class="carousel-dots"></div>
                 </div>
                 <div class="maquina-content">
                     <h3>Bebidas Calientes</h3>
@@ -115,13 +121,8 @@
                         <img class="carousel-img" src="img/maquinas/bebidafria2.jpg" alt="Máquina de Bebidas Frías 2">
                         <img class="carousel-img" src="img/maquinas/coca.jpg" alt="Máquina de Bebidas Frías 3">
                         <img class="carousel-img" src="img/maquinas/cocacola.jpg" alt="Máquina de Bebidas Frías 3">
-
-
                         <div class="maquina-overlay"></div>
                     </div>
-                    <button class="carousel-btn prev" onclick="changeSlide(this, -1)">❮</button>
-                    <button class="carousel-btn next" onclick="changeSlide(this, 1)">❯</button>
-                    <div class="carousel-dots"></div>
                 </div>
                 <div class="maquina-content">
                     <h3>Bebidas Frías</h3>
@@ -136,13 +137,8 @@
                         <img class="carousel-img" src="img/maquinas/comida.jpg" alt="Máquina de Snacks 2">
                         <img class="carousel-img" src="img/maquinas/comida2.jpg" alt="Máquina de Snacks 3">
                         <img class="carousel-img" src="img/maquinas/comida4.jpg" alt="Máquina de Snacks 4">
-
-
                         <div class="maquina-overlay"></div>
                     </div>
-                    <button class="carousel-btn prev" onclick="changeSlide(this, -1)">❮</button>
-                    <button class="carousel-btn next" onclick="changeSlide(this, 1)">❯</button>
-                    <div class="carousel-dots"></div>
                 </div>
                 <div class="maquina-content">
                     <h3>Snacks y Refrigerios</h3>
@@ -161,8 +157,8 @@
             
             <div class="payment-grid">
                 <div class="payment-item fade-in">
-                    <h4>💵 Billetes</h4>
-                    <p>Aceptación de billetes con validación automática</p>
+                    <h4>💵 Efectivo</h4>
+                    <p>Aceptación de efectivo con validación automática</p>
                     <div class="payment-video-container">
                         <video class="payment-video" controls>
                             <source src="videos/efectivo.mp4" type="video/mp4">
@@ -191,65 +187,80 @@
             <h2 class="section-title">Tecnología e Innovación</h2>
             <p class="section-subtitle">Sistemas avanzados de seguridad y control para una experiencia superior.</p>
             
-            <div class="tech-features">
-                <div class="tech-feature fade-in">
-                    <div class="tech-icon">🔑</div>
+            <div class="sectores-grid">
+                <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/contrasena.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>PIN y Clave</h3>
-                    <p>Sistema de autenticación seguro para control de acceso empresarial</p>
+                    <p class="sector-description">Sistema de autenticación seguro para control de acceso empresarial</p>
                 </div>
                 
-                <div class="tech-feature fade-in">
-                    <div class="tech-icon">👤</div>
+                <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/escaneo-facial.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>Reconocimiento Facial</h3>
-                    <p>Tecnología biométrica para identificación personalizada</p>
+                    <p class="sector-description">Tecnología biométrica para identificación personalizada</p>
                 </div>
                 
-                <div class="tech-feature fade-in">
-                    <div class="tech-icon">🔧</div>
+                <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/llave.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>Llaveros</h3>
-                    <p>Acceso rápido mediante dispositivos RFID personalizados</p>
+                    <p class="sector-description">Acceso rápido mediante dispositivos RFID personalizados</p>
                 </div>
                 
-                <div class="tech-feature fade-in">
-                    <div class="tech-icon">📱</div>
+                <div class="sector-card fade-in">
+                    <div class="sector-icon">
+                        <img src="img/iconos/aplicacion-movil.png" alt="Sectores Públicos" class="sector-icon-img">
+                    </div>
                     <h3>Aplicaciones Móviles</h3>
-                    <p>Control y gestión completa desde dispositivos móviles</p>
+                    <p class="sector-description">Control y gestión completa desde dispositivos móviles</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Marcas -->
+ <!-- Marcas -->
     <section class="section">
         <div class="section-container">
             <h2 class="section-title">Nuestras Marcas</h2>
             <p class="section-subtitle">Trabajamos con las mejores marcas del mercado para garantizar calidad superior.</p>
             
-            <div class="brands-grid">
-                <div class="brand-item fade-in">
-                    <img src="img/brand/arcor.png" alt="Arcor" class="brand-logo">
-                    <h3>Arcor</h3>
+            <div class="brands-carousel-container">
+                <button class="brands-carousel-btn prev" onclick="changeBrandsSlide(-1)">❮</button>
+                <div class="brands-carousel-wrapper">
+                    <div class="brands-carousel-track">
+                        <div class="brand-item">
+                            <img src="img/brand/arcor.png" alt="Arcor" class="brand-logo">
+                            <h3>Arcor</h3>
+                        </div>
+                        <div class="brand-item">
+                            <img src="img/brand/cocacola.png" alt="CocaCola" class="brand-logo">
+                            <h3>Coca Cola</h3>
+                        </div>
+                        <div class="brand-item">
+                            <img src="img/brand/mondelez.png" alt="mondelez" class="brand-logo">
+                            <h3>Mondelez</h3>
+                        </div>
+                        <div class="brand-item">
+                            <img src="img/brand/LaSerenisima.png" alt="LaSerenisima" class="brand-logo">
+                            <h3>La Serenísima</h3>
+                        </div>
+                        <div class="brand-item">
+                            <img src="img/brand/milkaut.jpg" alt="Milkaut" class="brand-logo">
+                            <h3>Milkaut</h3>
+                        </div>
+                        <div class="brand-item">
+                            <img src="img/brand/lavirginia.jpg" alt="LaVirginia" class="brand-logo">
+                            <h3>La Virginia</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="brand-item fade-in">
-                    <img src="img/brand/cocacola.png" alt="CocaCola" class="brand-logo">
-                    <h3>Coca Cola</h3>
-                </div>
-                <div class="brand-item fade-in">
-                    <img src="img/brand/mondelez.png" alt="mondelez" class="brand-logo">
-                    <h3>Mondelez</h3>
-                </div>
-                <div class="brand-item fade-in">
-                    <img src="img/brand/LaSerenisima.png" alt="LaSerenisima" class="brand-logo">
-                    <h3>La Serenísima</h3>
-                </div>
-                <div class="brand-item fade-in">
-                    <img src="img/brand/milkaut.jpg" alt="Milkaut" class="brand-logo">
-                    <h3>Milkaut</h3>
-                </div>
-                <div class="brand-item fade-in">
-                    <img src="img/brand/lavirginia.jpg" alt="LaVirginia" class="brand-logo">
-                    <h3>La Virginia</h3>
-                </div>
+                <button class="brands-carousel-btn next" onclick="changeBrandsSlide(1)">❯</button>
+                <div class="brands-carousel-dots"></div>
             </div>
         </div>
     </section>

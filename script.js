@@ -41,13 +41,11 @@ document.querySelectorAll('.fade-in').forEach(el => {
 });
 
 
-//CARRUSEL
+//CARRUSEL AUTOMÁTICO ASINCRÓNICO
 
-// Función para cambiar de slide en el carrusel
-function changeSlide(button, direction) {
-    const container = button.closest('.carousel-container');
-    const images = container.querySelectorAll('.carousel-img');
-    const dots = container.querySelectorAll('.carousel-dot');
+// Función para cambiar al siguiente slide automáticamente
+function autoChangeSlide(carousel) {
+    const images = carousel.querySelectorAll('.carousel-img');
     
     // Encontrar el índice actual
     let currentIndex = 0;
@@ -59,83 +57,133 @@ function changeSlide(button, direction) {
     
     // Remover clase active del slide actual
     images[currentIndex].classList.remove('active');
-    if (dots.length > 0) {
-        dots[currentIndex].classList.remove('active');
-    }
     
-    // Calcular nuevo índice
-    let newIndex = currentIndex + direction;
-    
-    // Circular: volver al inicio o al final
-    if (newIndex >= images.length) {
-        newIndex = 0;
-    } else if (newIndex < 0) {
-        newIndex = images.length - 1;
-    }
+    // Calcular nuevo índice (circular)
+    let newIndex = (currentIndex + 1) % images.length;
     
     // Agregar clase active al nuevo slide
     images[newIndex].classList.add('active');
-    if (dots.length > 0) {
-        dots[newIndex].classList.add('active');
-    }
 }
 
-// Función para ir a un slide específico
-function goToSlide(container, index) {
-    const images = container.querySelectorAll('.carousel-img');
-    const dots = container.querySelectorAll('.carousel-dot');
-    
-    // Remover todas las clases active
-    images.forEach(img => img.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Agregar clase active al slide e indicador seleccionado
-    images[index].classList.add('active');
-    dots[index].classList.add('active');
-}
-
-// Inicializar los dots (indicadores) para cada carrusel
-function initializeCarousels() {
+// Inicializar carruseles automáticos con intervalos diferentes
+function initializeAutoCarousels() {
     const carousels = document.querySelectorAll('.carousel-container');
     
-    carousels.forEach(carousel => {
-        const images = carousel.querySelectorAll('.carousel-img');
-        const dotsContainer = carousel.querySelector('.carousel-dots');
+    // Intervalos diferentes para cada carrusel (en milisegundos)
+    const intervals = [3500, 4200, 3800]; // Diferentes tiempos para efecto asincrónico
+    
+    carousels.forEach((carousel, index) => {
+        // Usar un intervalo diferente para cada carrusel
+        const interval = intervals[index] || 3500;
         
-        // Crear los dots según la cantidad de imágenes
-        images.forEach((img, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('carousel-dot');
-            if (index === 0) {
-                dot.classList.add('active');
-            }
-            
-            // Agregar evento click a cada dot
-            dot.addEventListener('click', () => {
-                goToSlide(carousel, index);
-            });
-            
-            dotsContainer.appendChild(dot);
-        });
+        setInterval(() => {
+            autoChangeSlide(carousel);
+        }, interval);
     });
 }
 
-// Carrusel automático (opcional)
-function autoPlayCarousels() {
-    const carousels = document.querySelectorAll('.carousel-container');
+// CARRUSEL DE MARCAS
+let currentBrandsSlide = 0;
+let brandsPerView = getBrandsPerView();
+let brandsAutoplayInterval;
+
+function getBrandsPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 968) return 2;
+    return 3;
+}
+
+function initializeBrandsCarousel() {
+    const track = document.querySelector('.brands-carousel-track');
+    const items = document.querySelectorAll('.brand-item');
+    const dotsContainer = document.querySelector('.brands-carousel-dots');
     
-    carousels.forEach(carousel => {
-        setInterval(() => {
-            const nextButton = carousel.querySelector('.carousel-btn.next');
-            if (nextButton) {
-                changeSlide(nextButton, 1);
-            }
-        }, 6000); // segundos
+    if (!track || !items.length) return;
+    
+    const totalSlides = Math.ceil(items.length / brandsPerView);
+    
+    // Crear dots
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'brands-dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToBrandsSlide(i);
+        dotsContainer.appendChild(dot);
+    }
+    
+    updateBrandsCarousel();
+    startBrandsAutoplay();
+}
+
+function updateBrandsCarousel() {
+    const track = document.querySelector('.brands-carousel-track');
+    const items = document.querySelectorAll('.brand-item');
+    const dots = document.querySelectorAll('.brands-dot');
+    
+    if (!track || !items.length) return;
+    
+    const itemWidth = items[0].offsetWidth;
+    const gap = 32; // 2rem = 32px
+    const offset = -(currentBrandsSlide * brandsPerView * (itemWidth + gap));
+    
+    track.style.transform = `translateX(${offset}px)`;
+    
+    // Actualizar dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentBrandsSlide);
     });
 }
+
+function changeBrandsSlide(direction) {
+    const items = document.querySelectorAll('.brand-item');
+    const totalSlides = Math.ceil(items.length / brandsPerView);
+    
+    currentBrandsSlide += direction;
+    
+    if (currentBrandsSlide < 0) {
+        currentBrandsSlide = totalSlides - 1;
+    } else if (currentBrandsSlide >= totalSlides) {
+        currentBrandsSlide = 0;
+    }
+    
+    updateBrandsCarousel();
+    resetBrandsAutoplay();
+}
+
+function goToBrandsSlide(index) {
+    currentBrandsSlide = index;
+    updateBrandsCarousel();
+    resetBrandsAutoplay();
+}
+
+function startBrandsAutoplay() {
+    brandsAutoplayInterval = setInterval(() => {
+        changeBrandsSlide(1);
+    }, 4000);
+}
+
+function resetBrandsAutoplay() {
+    clearInterval(brandsAutoplayInterval);
+    startBrandsAutoplay();
+}
+
+// Actualizar en resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        const newBrandsPerView = getBrandsPerView();
+        if (newBrandsPerView !== brandsPerView) {
+            brandsPerView = newBrandsPerView;
+            currentBrandsSlide = 0;
+            initializeBrandsCarousel();
+        }
+    }, 250);
+});
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    initializeCarousels();
-   /*  autoPlayCarousels(); */
+    initializeAutoCarousels();
+    initializeBrandsCarousel();
 });
